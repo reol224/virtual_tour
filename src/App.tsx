@@ -1,33 +1,35 @@
-import { useState } from 'react';
+import React from 'react';
 import './App.css';
+import Planet from './Planet';
 import mercuryPlanet from './assets/mercury.png';
 import mercuryFacts from './data/mercuryFacts.json';
+import venusPlanet from './assets/venus.png';
+import venusFacts from './data/venusFacts.json';
+// Add other imports for other planets
 
-function App() {
-    const [showFacts, setShowFacts] = useState(false);
-
-    const handlePlanetClick = () => {
-        setShowFacts(!showFacts);
-    };
+const App: React.FC = () => {
+    // Define data for each planet
+    const planetsData = [
+        {
+            name: 'Mercury',
+            planetImg: mercuryPlanet,
+            facts: mercuryFacts,
+        },
+        {
+            name: 'Venus',
+            planetImg: venusPlanet,
+            facts: venusFacts,
+        },
+        // Add other planets data here
+    ];
 
     return (
         <>
-            <div className={`planet mercury${showFacts ? " active" : ""}`} onClick={handlePlanetClick}>
-                <img src={mercuryPlanet} className="planet-img" alt="Mercury Planet" />
-            </div>
-            {showFacts && (
-                <div className="card">
-                    <h2>Mercury Facts</h2>
-                    {mercuryFacts.map((fact, index) => (
-                        <div key={index}>
-                            <h3>{fact.title}</h3>
-                            <p>{fact.fact}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
+            {planetsData.map((planetData) => (
+                <Planet key={planetData.name} {...planetData}></Planet>
+            ))}
         </>
     );
-}
+};
 
 export default App;

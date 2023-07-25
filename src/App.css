@@ -1,77 +1,117 @@
+/* App.css */
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
+.planet-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Planet styles */
 .planet {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  overflow: hidden;
-  border-radius: 50%;
-  position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    animation: planet-spin 20s linear infinite; /* Updated the animation duration */
 }
 
-/*.planet-img {*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  */
-/*}*/
-
-.planet.mercury:hover .planet-img {
-  /* filter: drop-shadow(0 0 20px rgba(7, 6, 0, 0.8)); */
-  animation: planet-spin 10s linear infinite;
+.planet-img {
+    /*width: 100%;*/
+    /*height: 100%;*/
+    object-fit: cover;
 }
 
-.planet.mercury.active {
-  border: 2px solid #ffaa33;
+.planet:hover {
+    border-color: #ffaa33;
+    animation-play-state: paused; /* Pause the spinning animation on hover */
 }
 
-.card {
-  padding: 2em;
-  display: inline-block;
-  text-align: left;
-  border: 2px solid #ffaa33;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 220px; /* Adjust this value to position the card */
-  left: 100px; /* Adjust this value to position the card */
-  z-index: 1;
+.planet.mercury {
+    animation-delay: 0s; /* Adjust the delay for each planet to create the circular pattern */
 }
 
-.card h2 {
-  margin-top: 0;
-  color: #ffaa33;
-}
-
-.card h3 {
-  margin-top: 1rem;
-  color: #333;
-}
-
-.card p {
-  margin-bottom: 1rem;
-  color: #555;
+.planet.venus {
+    animation-delay: 3s;
 }
 
 @keyframes planet-spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
+/* Card styles */
 .card {
-  padding: 2em;
+    text-align: left;
+    border: 2px solid #ffaa33;
+    min-width: 200px; /* Reduced minimum width for a smaller card */
+    padding: 1em; /* Reduced padding to make the card smaller */
+    position: fixed;
+    top: 20px; /* Adjust this value to position the card vertically */
+    left: 20px; /* Adjust this value to position the card horizontally */
+    transform: none; /* Remove the transform to position the card using fixed coordinates */
+    z-index: 1;
+    width: 200px; /* Set a fixed width for the card */
+    max-width: calc(100vw - 40px); /* Set maximum width based on the screen width to keep it readable */
+    background-color: #fff; /* Add a background color to improve readability */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+.card h2 {
+    margin-top: 0;
+    color: #ffaa33;
+    font-size: 1rem; /* Adjust the font size for better readability */
 }
+
+.card h3 {
+    margin-top: 1rem;
+    color: #333;
+    font-size: 0.9rem; /* Adjust the font size for better readability */
+}
+
+.card p {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 0.8rem; /* Adjust the font size for better readability */
+}
+
+/* Read the docs link styles */
+.read-the-docs {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.read-the-docs a {
+    color: #888;
+    text-decoration: none;
+}
+
+.read-the-docs a:hover {
+    text-decoration: underline;
+}
+
+/* Add more planet-specific styles below if needed */

@@ -26,6 +26,39 @@
   animation: planet-spin 10s linear infinite;
 }
 
+.planet.mercury.active {
+  border: 2px solid #ffaa33;
+}
+
+.card {
+  padding: 2em;
+  display: inline-block;
+  text-align: left;
+  border: 2px solid #ffaa33;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 220px; /* Adjust this value to position the card */
+  left: 100px; /* Adjust this value to position the card */
+  z-index: 1;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #ffaa33;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  color: #333;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
 @keyframes planet-spin {
   from {
     transform: rotate(0);

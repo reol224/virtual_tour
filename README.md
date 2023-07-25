@@ -1,3 +1,6 @@
+![Spinning Planets GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGE3Zmx3MjU2YWFkOHdiZHhqaGFrcTkyaDd0MmM5M2p1emx2bXAxbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uHYlJ3mWT7nySAafEU/giphy.gif)
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

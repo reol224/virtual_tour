@@ -54,6 +54,10 @@ body {
     animation-delay: 3s;
 }
 
+.planet.earth {
+    animation-delay: 6s;
+}
+
 @keyframes planet-spin {
     from {
         transform: rotate(0);
